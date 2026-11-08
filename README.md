@@ -132,8 +132,8 @@ inherits a minimal `PATH` that does not include nvm or Homebrew bins. `command: 
 with `ENOENT`. Do not use the app's bundled `runtime/bin/node` either — that is a wrapper
 script requiring `$DSH_DESKTOP_NODE_EXECUTABLE`, which env scrubbing strips.
 
-**The file must stay a YAML **array**.** A patch file with only comments parses as `null`.
-Keep at least `[]` or a real entry.
+**The file must stay a YAML array.** A patch file with only comments parses as `null`
+and DSH fails to boot it. Keep at least `[]` or a real entry.
 
 ### 3. Restart and confirm
 
