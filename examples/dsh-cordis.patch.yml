@@ -1,0 +1,20 @@
+# Mount REA through the lite proxy in DeepSeek Harness.
+#
+# File: ~/.dsh/cordis.patch.yml   (home-level user layer; applies to every profile)
+# Restart DSH after editing (the MCP client may hot-reload, but a restart is
+# the reliable path). Verify with: node scripts/doctor.mjs
+#
+# Replace NODE_PATH and PROXY_PATH with your own absolute paths.
+
+- insert:
+    - id: rea-proxy
+      name: "@deepseek-ai/dsh-mcp-client"
+      config:
+        serverName: rea
+        transport: stdio
+        command: /Users/you/.nvm/versions/node/v22.14.0/bin/node
+        args:
+          - /Users/you/REA-mcp-lite/rea-proxy.mjs
+        env:
+          # Optional: point REA at a specific Hopper install.
+          HOPPER_LAUNCHER_PATH: /Applications/Hopper Disassembler.app/Contents/MacOS/hopper

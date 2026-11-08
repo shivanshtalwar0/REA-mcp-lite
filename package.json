@@ -1,0 +1,35 @@
+{
+  "name": "rea-mcp-lite",
+  "version": "1.0.0",
+  "description": "On-demand MCP proxy for REA: all 207 reverse-engineering tools at a ~415-token context footprint instead of ~194,000.",
+  "type": "module",
+  "main": "rea-proxy.mjs",
+  "bin": {
+    "rea-mcp-lite": "rea-proxy.mjs"
+  },
+  "files": [
+    "rea-proxy.mjs",
+    "scripts/doctor.mjs",
+    "examples/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node rea-proxy.mjs",
+    "doctor": "node scripts/doctor.mjs"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "rea",
+    "reverse-engineering",
+    "context-window",
+    "token-budget",
+    "deepseek-harness",
+    "claude-code"
+  ],
+  "license": "MIT"
+}
